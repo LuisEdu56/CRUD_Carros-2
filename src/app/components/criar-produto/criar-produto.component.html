@@ -1,0 +1,187 @@
+<h1>Criar Carro</h1>
+
+<form [formGroup]="formCadastrar" (ngSubmit)="submitForm()">
+
+<label>Marca: </label>
+<input type="text" formControlName="Marca"> <br>
+<div *ngIf="formCadastrar.controls['Marca'].touched">
+    <small *ngIf="formCadastrar.controls['Marca'].hasError('required')" style="color: red;">A marca é Obrigatória</small>
+    <small *ngIf="formCadastrar.controls['Marca'].hasError('minlength')" style="color: red;">A marca precisa ter no mínimo 5 caracteres</small>
+</div>
+
+<label>Modelo: </label>
+<input type="text" formControlName="Modelo"> <br>
+<div *ngIf="formCadastrar.controls['Modelo'].touched"> 
+    <small *ngIf="formCadastrar.controls['Modelo'].hasError('required')" style="color: red;">Informar o Modelo é Obrigatório</small>
+</div>
+
+<label>Ano: </label>
+<input type="number" formControlName="Ano"> <br>
+<div *ngIf="formCadastrar.controls['Ano'].touched"> 
+    <small *ngIf="formCadastrar.controls['Ano'].hasError('required')" style="color: red;">Informar o Ano é Obrigatório</small>
+</div>
+
+<label>Versão: </label>
+<input type="text" formControlName="Versao"> <br>
+<div *ngIf="formCadastrar.controls['Versao'].touched"> 
+    <small *ngIf="formCadastrar.controls['Versao'].hasError('required')" style="color: red;">Informar a Versão é Obrigatório</small>
+</div>
+
+<label>Combustível: </label>
+<input type="text" formControlName="Combustivel"> <br>
+<div *ngIf="formCadastrar.controls['Combustivel'].touched"> 
+    <small *ngIf="formCadastrar.controls['Combustivel'].hasError('required')" style="color: red;">Informar o tipo de combustível é Obrigatório</small>
+</div>
+
+<label>Cores: </label>
+<input type="text" formControlName="Cores"> <br>
+<div *ngIf="formCadastrar.controls['Cores'].touched"> 
+    <small *ngIf="formCadastrar.controls['Cores'].hasError('required')" style="color: red;">Informar a cor é Obrigatório</small>
+</div>
+
+<label>Câmbio: </label>
+<input type="text" formControlName="Cambio"> <br>
+<div *ngIf="formCadastrar.controls['Cambio'].touched"> 
+    <small *ngIf="formCadastrar.controls['Cambio'].hasError('required')" style="color: red;">Informar o câmbio é Obrigatório</small>
+</div>
+
+<label>Quilometragem: </label>
+<input type="number" formControlName="Quilometragem"> <br>
+<div *ngIf="formCadastrar.controls['Quilometragem'].touched"> 
+    <small *ngIf="formCadastrar.controls['Quilometragem'].hasError('required')" style="color: red;">Informar a quilometragem é Obrigatório</small>
+</div>
+
+<label>Blindagem: </label>
+<input type="text" formControlName="Blindagem"> <br>
+<div *ngIf="formCadastrar.controls['Blindagem'].touched"> 
+    <small *ngIf="formCadastrar.controls['Blindagem'].hasError('required')" style="color: red;">Informar a blindagem é Obrigatório</small>
+</div>
+
+<label>Preço: </label>
+<input type="text" formControlName="Preco"> <br>
+<div *ngIf="formCadastrar.controls['Preco'].touched"> 
+    <small *ngIf="formCadastrar.controls['Preco'].hasError('required')" style="color: red;">O Preço é Obrigatório</small>
+</div>
+
+<!-- AQUI - Colocar os SELECTS de verdade -->
+
+<!--
+<label>Cores: </label>
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>Estado do produto:</mat-label>
+    <select matNativeControl required name="cores" id="cores" formControlName="cores"> 
+      <option value="branco">branco</option>
+      <option value="preto">preto</option>
+      <option value="verde">verde</option>
+    </select> 
+  </mat-form-field>
+  <div *ngIf="formCadastrar.controls['cores'].touched">   
+      <small *ngIf="formCadastrar.controls['cores'].hasError('required')" class="alerta">Informar a cor é obrigatório!</small>
+  </div>
+
+  
+
+<mat-form-field appearance="fill">
+  <mat-label>Selecione uma marca:</mat-label>
+  <mat-select *ngIf="formCadastrar.controls['preco'].touched">
+    <mat-option>Marcas:</mat-option>
+    <mat-option value="Adamo">Adamo</mat-option>
+    <mat-option value="Agrale">Agrale</mat-option>
+    <mat-option value="Alfa Romeo">Alfa Romeo</mat-option>
+    <mat-option value="Ariel">Ariel</mat-option>
+    <mat-option value="Asia">Asia</mat-option>
+    <mat-option value="Aston Martin">Aston Martin</mat-option>
+    <mat-option value="Audi">Audi</mat-option>
+    <mat-option value="Bentley">Bentley</mat-option>
+    <mat-option value="Bugatti">Bugatti</mat-option>
+    <mat-option value="Chevrolet">Chevrolet</mat-option>
+    <mat-option value="Citroen">Citroen</mat-option>
+    <mat-option value="Ferrari">Ferrari</mat-option>
+    <mat-option value="Fiat">Fiat</mat-option>
+    <mat-option value="Ford">Ford</mat-option>
+    <mat-option value="Gurgel">Gurgel</mat-option>
+    <mat-option value="Honda">Honda</mat-option>
+    <mat-option value="Hyundai">Hyundai</mat-option>
+    <mat-option value="Jeep">Jeep</mat-option>
+    <mat-option value="Lamborghini">Lamborghini</mat-option>
+    <mat-option value="Mercedes-Benz">Mercedes-Benz</mat-option>
+    <mat-option value="Nissan">Nissan</mat-option>
+    <mat-option value="Peugeot">Peugeot</mat-option>
+    <mat-option value="Renault">Renault</mat-option>
+    <mat-option value="Tesla">Tesla</mat-option>
+    <mat-option value="Toyota">Toyota</mat-option>
+    <mat-option value="Volkswagen">Volkswagen</mat-option>
+    <mat-option value="Volvo">Volvo</mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <h4>mat-select</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="food">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <h4>native html select</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite car</mat-label>
+    <select matNativeControl [(ngModel)]="selectedCar" name="car">
+      <option value="" selected></option>
+      <option *ngFor="let car of cars" [value]="car.value">
+        {{car.viewValue}}
+      </option>
+    </select>
+  </mat-form-field>
+<h4>mat select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite animal</mat-label>
+  <mat-select [formControl]="animalControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let animal of animals" [value]="animal">
+      {{animal.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+</mat-form-field>
+
+<h4>native html select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Select your car (required)</mat-label>
+  <select matNativeControl required [formControl]="selectFormControl">
+    <option label="--select something --"></option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <mat-error *ngIf="selectFormControl.hasError('required')">
+    This field is required
+  </mat-error>
+  <mat-hint>You can pick up your favorite car here</mat-hint>
+</mat-form-field>
+
+DOOOOO JOAO:::
+
+<label>Preço:</label>
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Estado do produto:</mat-label>
+    <select matNativeControl required name="preco" id="preco" formControlName="preco"> 
+      <option value="Novo">Novo</option>
+      <option value="Semi-Novo">Semi-Novo</option>
+      <option value="Usado">Usado</option>
+    </select> 
+  </mat-form-field>
+  <div *ngIf="formCadastrar.controls['preco'].touched">   
+      <small *ngIf="formCadastrar.controls['preco'].hasError('required')" class="alerta">O Estado é Obrigatório</small>
+  </div>
+  <br>
+
+
+-->
+
+<br>
+<button type="submit">Salvar</button>
+</form>   <!-- formulario agora reativo -->
